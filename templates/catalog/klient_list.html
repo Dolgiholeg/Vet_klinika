@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block content %}
+    <h2>НАШИ КЛИЕНТЫ:</h2>
+    <ul>{% for klient in klient_list %}
+        <li>
+            <a href="{{klient.get_absolute_url}} ">{{ klient.name }}</a>
+        </li>
+    {% endfor %}
+    </ul>
+{%  endblock content %}

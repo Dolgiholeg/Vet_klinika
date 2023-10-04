@@ -1,11 +1,30 @@
 <!DOCTYPE html>
+{% load static %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>КИНО</title>
+    {% block head %}
+    <title>ВЕТЕРИНАРНАЯ КЛИНИКА</title>
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% endblock head %}
 </head>
 <body>
-<h2>КАТАЛОГ ФИЛЬМОВ</h2>
+{% block menu %}
+        <div class = 'menu'>
+        <a href=" {% url 'home' %}">ГЛАВНАЯ</a>
+        <a href=" {% url 'allklient' %}">КЛИЕНТЫ</a>
+        <a href=" ">ПОРОДА</a>
+        <a href=" ">БОЛЕЗНЬ</a>
+        <a href=" ">ЛЕКАРСТВО</a>
+        </div>
+    {% endblock menu %}
+{% block content %}
+
+    <h2>О НАШЕЙ КЛИНИКЕ:</h2>
+        <h2>В клинике лечатся  {{ k1 }}  клиентов</h2>
+        <h2>В клинике лечатся  {{ k2 }}  пород животных</h2>
+        <h2>В клинике лечат  {{ k3 }}  болезней</h2>
+    {% endblock content %}
 
 </body>
 </html>

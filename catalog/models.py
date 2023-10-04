@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.urls import reverse
 # Create your models here.
 class Poroda(models.Model):
     vid = models.CharField(max_length=20, verbose_name='Вид')
@@ -33,3 +33,6 @@ class Klient(models.Model):
 
     def __str__(self):
         return self.name
+
+    def get_absolute_url(self):
+        return reverse('info', args=[self.id])
