@@ -16,10 +16,15 @@
         <a href=" ">ПОРОДА</a>
         <a href=" ">БОЛЕЗНЬ</a>
         <a href=" ">ЛЕКАРСТВО</a>
+            {% if not user.username %}
+        <a href="{% url 'login' %} ">ВХОД</a>
+            {% else %}
+        <a href=" {% url 'logout' %}">ВЫХОД</a>
+            {% endif %}
         </div>
     {% endblock menu %}
 {% block content %}
-
+    <h1> ПРИВЕТ {{ fname}} {{ lname }} </h1>
     <h2>О НАШЕЙ КЛИНИКЕ:</h2>
         <h2>В клинике лечатся  {{ k1 }}  клиентов</h2>
         <h2>В клинике лечатся  {{ k2 }}  пород животных</h2>
